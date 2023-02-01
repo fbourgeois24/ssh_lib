@@ -43,7 +43,7 @@ class ssh_client():
 		if auto_connect:
 			self.connect()
 		self.sftp = self.ssh.open_sftp()
-
+		return self.sftp
 
 	def close_sftp(self, auto_connect=True):
 		""" Fermeture du sftp """
@@ -56,6 +56,7 @@ class ssh_client():
 		if auto_connect:
 			self.connect()
 		self.scp = SCPClient(self.ssh.get_transport())
+		return self.scp
 
 	def close_scp(self, auto_connect=True):
 		""" Fermeture du scp """
