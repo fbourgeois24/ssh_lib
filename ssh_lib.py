@@ -31,7 +31,7 @@ class ssh_client():
 			pkey = self.key
 
 		# Connexion au serveur en ssh
-		self.ssh.connect(self.server_addr, port=self.port, username=username, pkey = pkey)
+		self.ssh.connect(self.server_addr, port=self.server_port, username=username, pkey = pkey)
 
 	def disconnect(self):
 		""" Déconnexion du ssh """
